@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+
+    <style>
+        fieldset{
+            width: 400px;
+            height: 550px;
+            margin: 45px 200px 200px 170px;
+        }
+        input{
+            width: 350px;
+            height: 30px;
+        }
+        label{
+            align-items: initial;
+        }
+        button{
+            width:350px;
+            height:45px;
+            background-color: #8A74BE;
+            color: white;
+            font-size: 20px;
+        }
+       
+        form{
+            margin-left: 15px;
+        }
+        .popup {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+
+            /* The actual popup */
+            .popup .popuptext {
+            visibility: hidden;
+            width: 260px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 9%;          
+            margin-left: 5px;
+            }
+            
+
+            /* Popup arrow */
+            .popup .popuptext::after {
+            content: "";
+            position: absolute;
+            top:0px;
+            left: 22%;
+            margin-left: -85px;
+            border-width: 16px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+            /* border-color: rgb(209, 18, 18) transparent transparent transparent; */
+            transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            }
+
+            /* Toggle this class - hide and show the popup */
+            .popup .show {
+            visibility: visible;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s;
+            }
+
+            /* Add animation (fade in the popup) */
+            @-webkit-keyframes fadeIn {
+            from {opacity: 0;} 
+            to {opacity: 1;}
+            }
+
+            @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity:1 ;}
+            }
+            /* style for eye icon */
+          #togglePassword{
+            margin-left: -30px;
+            cursor: pointer;
+            }
+            img{
+                width: 8rem;
+                height: 10rem;
+                /*  left */
+                margin: 7rem 20rem -10rem 17rem;
+            }
+            h1{
+                margin: 12rem 20rem 0rem 17rem;
+                font-family: "Gill Sans", sans-serif;
+                font-size: 35px;
+            }
+        
+    </style>
+</head>
+
+<body  style="background-color: #ECEEF2;">
+    <center>
+    <div>
+    <div>
+        <img src="Logo.png" alt="logo missing"><br>
+        <h1 style="color:#8A74BE ;">Lorem Ipsum</h1>
+    </div>
+        <fieldset>
+    <div>
+        <form style="text-align: left;">
+            <h3 style="text-align: center;">Create an Lorem Ipsum</h3>
+            <p style="word-spacing: 5px; text-align: center;">Lorem ipsul dolor lorem ipsul dolor <br> lorem. <a href="#">Learn more</a></p>
+            <label style="align-content: initial;">Email</label>
+                <br>
+          
+            <div class="popup" >
+                <input type="text" onclick="myFunction()">
+                <span class="popuptext" id="myPopup">You'll use this as your User Id</span>
+              </div>
+              <br>
+              <br>
+            <label>Phone<span style="color: rgb(92, 92, 92);">(recommended)</span></label><br>
+            <input type="tel">
+            <br>
+            <small>Standard calls,message or data rates may apply.</small><br><br><br>
+
+            <label for="password">Password</label><br>
+            <input type="password" id="password"><i class="bi bi-eye-slash" id="togglePassword"></i>
+            <br><br><br>
+            <button>Create account</button>
+            <br><br><br>
+            <p style="font-size: 12px; line-height: 15px; text-align: center; line-height: 20px; margin-top: -2px; margin-bottom: 15px;">By selecting Create account, you agree to our <a href="#">Terms</a> and have read and <br> acknowledge our <a href="#">Global Privacy</a> <br> Statement.</p>
+        </form>
+    </div>
+    <div style="background-color: rgb(179, 179, 181); height: 57.5px; margin-left: -14px; margin-right: -14px; text-align: center;" >
+       <br> <span style="margin-top: 5px;"> Lorem ipsum dol &copy; <a href="#">Lorem</a> Ipsum. All rights reserved.</span>
+    </div>
+          
+    </fieldset>
+</div>
+</center>
+    <script>
+        // When the user clicks on div, open the popup
+        function myFunction() {
+          var popup = document.getElementById("myPopup");
+          popup.classList.toggle("show");
+        }
+
+
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", function () {
+            // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            
+            // toggle the icon
+            this.classList.toggle("bi-eye");
+        });
+
+        // prevent form submit
+        const form = document.querySelector("form");
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+        });
+        </script>
+</body>
+</html>
+<!-- <input type="password" class="inputtext _55r1 _6luy _9npi" name="pass" id="pass" data-testid="royal_pass" placeholder="Password" aria-label="Password"> -->
+<!-- <input type="password" class="inputtext _55r1 _6luy _9npi" name="pass" id="pass" data-testid="royal_pass" placeholder="Password" aria-label="Password"> -->
